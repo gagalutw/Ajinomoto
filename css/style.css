@@ -1,0 +1,929 @@
+@import url("https://fonts.googleapis.com/earlyaccess/notosanstc.css");
+@import url('https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap');
+/*font-family: 'Baloo Chettan', cursive;
+font-family: 'Kosugi Maru', sans-serif;
+*/
+
+:root {
+    --main-red: #ee1c26;
+    --main-gray: #888;
+    --secondary-gray: #ccc;
+    --light-gray: #f0f0f0;
+    --main-orange: #ff6600;
+    --secondary-orange: #ff9600;
+    --secondary-yellow: #fff8a8;
+}
+
+
+html,body {font-family: 'Noto Sans TC', sans-serif, Arial, "微軟正黑體", "Microsoft JhengHei";position: relative;overflow-x: hidden;color: #888;
+font-size: 16px;}
+* {margin: 0;padding: 0;}
+p {font-size: 1rem;line-height: 2rem;margin: 0;}
+a,a:hover {text-decoration: none;transition-duration: 0.3s;color: #ee1c26}
+a {color: #888;}
+ul,ul li {list-style-type: none;margin: 0;padding: 0;}
+.txt-red,.nav-link:hover,
+.breadcrumb a:hover {color: #ee1c26}
+.bg-main {background-color: #ee1c26}
+.bg-light-gray {background-color: #f0f0f0}
+.border-1px-ccc {border: 1px solid #ccc;}
+.color-w{color:#fff}
+/*Nav Setting*/
+.main-nav {background: #FFF;}
+.main-nav ul {box-shadow: none;margin: 5px 0;flex-wrap: wrap;}
+.main-nav .nav-list .nav-link {border: none;line-height: 2rem;padding: 0 1.5rem;color: #888;}
+.main-nav .nav-list .dropdown-item {color: #888;}
+.main-nav .nav-list .dropdown-item.active {color: #fff;text-decoration: none;background-color: #f8f9fa;}
+.main-nav .nav-list .dropdown-item:focus,
+.main-nav .nav-list .dropdown-item:hover {color:#ee1c26;text-decoration: none;background-color: #f8f9fa;}
+.separator {position: relative;}
+.search-box, .search-btn {height: 30px;}
+.search-btn {padding: 1px 7px 2px;}
+.search-btn:hover {color: #fff;background-color: #ee1c26; color:#ee1c26;}
+.nav-search {display: flex;align-items: center;}
+.global-link {margin-left: 30px;}
+.global-link a {color: #888;transition-duration: 0.3s;}
+.global-link a:hover { color:#ee1c26;}
+.global-link a::before {content: "";display: inline-block;background: url(../images/worldg.svg) no-repeat scroll center center / cover;width: 20px;height: 20px;vertical-align: bottom;margin-right: 5px;transition-duration: 0.3s;}
+.global-link a:hover::before {background: url(../images/worldr.svg) no-repeat scroll center center / cover;}
+/*Nav Setting*/
+
+
+/*SWIPER SETTING*/
+.swiper-slide img {width: 100%;height: auto;}
+.main-banner .swiper-slide img {max-width: 1920px;max-height: 600px;}
+.main-banner .swiper-button-next {background-image: url(../images/arrow_R.svg);}
+.main-banner .swiper-button-prev {background-image: url(../images/arrow_L.svg);}
+.recipe-thumbs .swiper-button-next, .recipe-thumbs .swiper-button-prev, .products-select .swiper-button-next,.products-select .swiper-button-prev{background: none;top: 55%;z-index:2;}
+.recipe-thumbs .swiper-button-next::after, .recipe-thumbs .swiper-button-prev::after, .products-select .swiper-button-next::after, .products-select .swiper-button-prev::after{font-family: 'Font Awesome 5 Free';font-weight: 900;font-size: 2rem; color:#ee1c26;}
+.recipe-thumbs .swiper-button-next::after, .products-select .swiper-button-next::after{content: "\f138";font-size: 1.5rem;}
+.recipe-thumbs .swiper-button-prev::after, .products-select .swiper-button-prev::after{content: "\f137";font-size: 1.5rem;}
+.recipe-thumbs .swiper-pagination-bullet-active {background: #ee1c26}
+.products-select .swiper-button-next{right:-4%;}
+.products-select .swiper-button-prev{left:-4%;}
+.products-select .swiper-button-next.swiper-button-disabled, .products-select .swiper-button-prev.swiper-button-disabled{opacity:0;}
+
+/*首頁每日一品swiper*/
+.daily-box {display: flex;justify-content: space-around;flex-wrap: wrap;align-items: center;}
+.daily-recipe {height: 80%;width: 100%;}
+.recipe-thumbs {height: 20%;box-sizing: border-box;padding: 10px 0;}
+.recipe-thumbs::before {content: "";display: block;border-bottom: 1px solid #ccc; margin-bottom: 20px;}
+.recipe-thumbs .swiper-slide {width: 25%;height: 100%;opacity: 0.4;}
+.recipe-thumbs .swiper-slide-thumb-active {opacity: 1;}
+/*SWIPER SETTING*/
+
+/*全站標題區*/
+.breadcrumb {background-color: #fff;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;font-size: 0.9rem;border-radius: 0;}
+.breadcrumb-item.active {color:#ee1c26;}
+.main-title {margin: 50px auto;text-align: center; color:#ee1c26;}
+.main-title h2 {position: relative;font-size: 1.75rem;}
+.main-title h2::after {margin: 12px auto;display: block;content: "";width: 35px;border-bottom: 5px solid #ee1c26}
+.sub-title, .search-title h3 {font-size: 1.125rem; color:#ee1c26;position: relative;}
+.sub-title::after, .search-title h3::after {position: absolute;content: ".............";display: block;letter-spacing: 2px;}
+
+/* 向右箭頭 <i> */
+i.fa-angle-right {margin-left: 5px;}
+/* 向左箭頭 <i> */
+i.fa-angle-left {margin-right: 5px;}
+/*全站標題區*/
+
+/*tabs*/
+.main-tabs {justify-content: center;text-align: center;}
+.main-tabs .nav-item {margin: 0 .5rem;}
+.main-tabs .nav-link {border: 1px solid #ccc;border-top-left-radius: .5rem;border-top-right-radius: .5rem;padding: .5rem 3rem;border-bottom: none;}
+.main-tabs .nav-link.active {background: #ee1c26;color: #fff;}
+/*tabs*/
+
+/*btn*/
+.main-btn {background: #ee1c26;color: #fff;border-radius: 30px;padding: 5px 20px;width: 180px;}
+.s-btn {margin-top: 10px;}
+.s-btn a { color:#ee1c26;}
+.s-right {text-align: right;}
+.s-left {text-align: left;}
+/*btn*/
+
+/*main card*/
+/* .main-card {border: 1px solid #ccc;max-width: 330px;width: 100%;min-width: 285px;margin: 10px;overflow: hidden;} */
+.main-card {border: 1px solid #ccc;width: 330px;min-width: 285px;margin: 10px;overflow: hidden;}
+.main-card a:hover {color: #ff6600}
+.main-card .text-area .s-btn, .main-card .text-area:hover {color: #ee1c26}
+.main-card-img img {width: auto;height: 185px;}
+.text-area {padding: 20px;}
+.text-area p {margin-bottom: 0;line-height: 1.8rem;word-break: break-all;overflow: hidden;}
+.card-stitle {font-size: 0.9rem;}
+.card-maintitle {font-size: 1.2rem;font-weight: 500;color: #000;}
+/*main card*/
+
+/*main table*/
+.main-content table {word-wrap: break-word;word-break: break-all;white-space: normal;font-size: 0.9rem;line-height: 1.5rem;border-collapse: separate;border-spacing: 0;width: 100%;max-width: 100%;}
+.main-content table th, .main-content table tr, .main-content table td {padding: 10px;}
+.main-content table tbody th {background-color: #f0f0f0;}
+.main-content table tbody th {border: 2px solid #f0f0f0;border-bottom: none;border-right: none;}
+.main-content table tbody td {border: 2px solid #f0f0f0;border-bottom: none;border-left: none;}
+.main-content table tbody tr:last-child td {border-bottom: 2px solid #f0f0f0;}
+.main-content table tbody tr:not(:first-child) th {border-top: 2px solid #fff;}
+.main-content table tbody tr:last-child th {border-bottom: 2px solid #f0f0f0;}
+/*main table*/
+
+/*page top banner 頁面banner*/
+.page-bn-full {max-width: 1920px;height: 500px;max-height: 600px;}
+.page-bn {position: relative;max-width: 1920px;border: 1px solid #ccc;overflow: hidden;}
+.page-bn img {width: 100%;height: auto;}
+.recipes-wrap .page-bn, .yum-wrap .page-bn{margin: 0;}
+.bg01 {background: url(../images/banner/top_all.jpg) no-repeat scroll center center / cover;}
+.bg-history {background: url(../images/banner/top_history.jpg) no-repeat scroll center center / cover;}
+
+/*list 首頁最新消息列表.搜尋結果列表 */
+.list-link {display: inline-block;vertical-align: middle;width: 80%;}
+.list-img {display: inline-block;max-width: 150px;overflow: hidden;vertical-align: middle;}
+.list-img img {max-width: 150px;width: 150px;height: auto;margin-right: 20px;}
+.list-link span, .list-link p { display: inline-block;overflow: hidden;text-overflow: ellipsis; white-space: nowrap;}
+.list-link i {display: inline-block;vertical-align: text-top;}
+.index-news-box .news-title {width: 460px;}
+.search-result .news-title,.search-result .news-title+span { width: 100%;}
+.dot-separator::after {content: "";width: 100%;height: 5px;display: block;background: url(../images/graydot.svg) repeat-x scroll top center / contain; margin: 20px 0;}
+
+/*search 搜尋結果*/
+.search-title h3 {font-size: 1.125rem;color:#ee1c26;position: relative;}
+.search-title h3::after {position: absolute;content: ".............";display: block;letter-spacing: 2px;}
+.search-result .list-link{padding-left:10px }
+.search-result-recipe span{padding-right: 10px}
+
+/*INDEX 首頁 START*/
+.index-title {position: relative; color:#ee1c26;padding-left: 70px;}
+.index-title::before {position: absolute;left: 0;bottom: 0;content: "";width: 70px;height: 50px;background: url(../images/seasoning.svg) no-repeat scroll top center / contain;}
+.hot-deal {padding: 10px;height: 60px;}
+.hot-deal p {margin: 0;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;color: #006ec3;}
+.hot-deal p::before {display: inline-block;margin-right:10px; vertical-align: middle;content: "";width: 35px; height: 35px;background: url(../images/icon_hotdeal.png) no-repeat scroll left center / contain;}
+
+/*首頁最新消息區塊*/
+.index-news-content .news-block {display: flex;justify-content: space-around;flex-wrap: wrap;/*align-items: center;*/}
+.index-news {width:65%; min-width: 300px;}
+.index-news .list-img {max-width: 80px;width: 100%;margin-right: 20px;}
+.index-news .list-img img {width: 100%;height: auto;}
+.index-news a:hover {color:#ee1c26}
+.index-news-box {vertical-align: middle;}
+.news-banner a {display: block;margin-bottom: 20px;overflow: hidden;max-width: 300px;max-height: 110px;}
+.news-banner img {width: 300px;height: auto;}
+
+/*首頁每日一品輪播日圖*/
+.daily-thumbs {width: 150px;text-align: center;cursor: pointer;}
+.daily-thumbs span {color: #666;display: block;letter-spacing: 3px;background: #ffea60;font-family: 'Baloo Chettan', cursive, 'Noto Sans TC', sans-serif, Arial, "微軟正黑體", "Microsoft JhengHei";}
+.recipe-thumbs .swiper-slide-thumb-active .daily-thumbs span {background: #ee1c26;color: #fff;}
+
+/*首頁每日一品左食譜圖*/
+.daily-img {max-width: 500px;width: 100%;max-height: 375px;position: relative;overflow: hidden;}
+.date-tag {top: -14px;right: 20px;position: absolute;width: 110px;height: 93px;background: url(../images/tag.png) no-repeat scroll left center / contain;color: #fff;text-align: center;padding: 15px 10px 0;letter-spacing: 3px;font-size: 1.9rem;font-family: 'Baloo Chettan', cursive;}
+
+/*首頁每日一品右文字*/
+.daily-info {width: 550px;position: relative;}
+.daily-info h3 { color:#ee1c26;font-size: 2rem;margin-bottom: 0px;}
+.daily-txt, .daily-product {display: inline-block;vertical-align: top;}
+.daily-txt {margin-right: 15px;}
+.daily-product {height: auto;margin-top: 20px;padding: 20px;background-color: #fff7d1;text-align: center;overflow: hidden;}
+.daily-product img {width: 140px;height: auto;max-width: 140px;}
+.daily-time {margin: 15px 0 0;}
+.daily-time::after, .daily-info h3::after, .material {content: "";display: block;border-bottom: 3px solid #ccc;margin-top: 15px;}
+.daily-time span {font-size: 1.2rem;font-weight: 500;display: inline-block;margin-right: 20px;}
+.daily-time span img {width: 50px;height: auto;margin-right: 5px;}
+.daily-txt .material {padding-bottom: 10px;}
+.daily-txt .material h5 { color:#ee1c26;font-size: 1.2rem;}
+.daily-txt .material p {line-height: 1.5rem;}
+.daily-link {margin: 30px 0;}
+.daily-link span {margin-right: 20px;text-transform: uppercase;font-weight: 500;}
+.daily-link span a {color:#ee1c26;}
+.daily-link span a:hover {color: #ff6600;}
+
+/*首頁商品介紹*/
+.index-prodcuts-block {position: relative;width: 100%;height: 600px;}
+.p-link {position: absolute;width: 40.33333%;opacity: 0.5;transition-duration: 0.3s;}
+.p-link:hover {opacity: 1;}
+.p-link a {display: block;}
+.p-link img {width: 100%;height: auto;}
+.p-link:hover .hon-box {visibility: visible;left: 10%;}
+.p-link:hover .vono-box {visibility: visible;left: 25%;}
+.p-link:hover .amino-box {visibility: visible;left: 40%;}
+.p-hon {left: 3%;}
+.p-vono {left: 30%;}
+.p-amino {right: 3%;}
+.logo-box {position: absolute;width: 200px;height: 200px;top: 45%;left: -10%;visibility: hidden;transition: left 0.2s;border-radius: 50%;background: #fff no-repeat center / 70% auto;border: 3px solid #ee1c26;}
+.logo-box .main-btn {text-align: center;margin: 210px auto;}
+.hon-box {background-image: url(../images/index_hon.png);}
+.vono-box {background-image: url(../images/index_vono.png);}
+.amino-box {background-image: url(../images/index_amino.png);}
+
+/*首頁下方按鈕*/
+.knowledge-box {text-align: center;}
+.knowledge-box p {font-size: 1.5rem;font-weight: 500;color:#ee1c26;margin: 0 auto;border-top: 2px solid #ee1c26;padding-top: 20px}
+.knowledge-box a {border: 1px solid #ee1c26;display: block;width: 250px;padding: 10px 20px;margin: 10px;}
+.knowledge-box a:hover {opacity: 0.5;}
+/*INDEX 首頁 END*/
+
+/*COMPANY 關於我們*/
+/*標題區*/
+.about-title {position: relative;height: 50px;}
+.about-title::after {position: absolute;content: "";width: 100%;height: 8px;display: block;background: url(../images/reddot.svg) repeat-x scroll top center / contain;bottom: 0;}
+.about-title-box {position: relative;padding-left: 30px;}
+.about-title-box::before {position: absolute;content: "";width: 40px;height: 44px;display: block;background: url(../images/subtitle_flag.png) no-repeat scroll top center / cover;}
+.about-title-box span {display: inline-block;padding-left: 55px;padding-top: 3px;font-size: 1.25rem;font-weight: 500;position: relative;}
+.about-title-box span::after {position: absolute;margin: 12px;display: inline-block;content: "";width: 15px;border-bottom: 4px solid #ee1c26;}
+
+/*histroy 關於我們-歷史沿革*/
+#history .description p{text-indent: 1.6rem;}
+
+.Ajtimeline {position: relative;max-width: 920px;width: 100%;margin: 50px auto;}
+.timeline-article .center-line {position: absolute;width: 8px;height: 100%;left: 27%;margin-top: 98px;margin-left: -2px;z-index: -1;}
+.timeline-content :nth-child(odd).timeline-article .center-line {background: url(../images/reddot.svg) repeat-y scroll top center / contain;}
+.timeline-content :nth-child(even).timeline-article .center-line {background: url(../images/graydot.svg) repeat-y scroll top center / contain;}
+.timeline-article {width: 100%;height: 100%;position: relative;overflow: hidden;margin: 20px 0;}
+.timeline-article .content-left-container {max-width: 40%;width: 100%;}
+.timeline-article .content-right-container {max-width: 59%;width: 100%;margin: 10px 0;}
+.timeline-article .content-right {position: relative;width: auto;background-color: #f0f0f0;border-radius: 10px;padding: 20px;}
+.timeline-article img {display: block;margin: 10px;}
+.timeline-article p {font-weight: 400;font-size: 0.9rem;margin: 0 0 0 80px;}
+.article-number {border-radius: 10px;padding: 5px 10px;color: #fff;float: left;}
+.timeline-content :nth-child(odd).timeline-article .article-number {background: #ee1c26;}
+.timeline-content :nth-child(even).timeline-article .article-number {background: #888;}
+.timeline-article .content-left-container {float: left;}
+.timeline-article .content-right-container {float: right;}
+.timeline-article .meta-year {position: absolute;top: 0;left: 25%;width: 100px;height: 100px;margin-left: -31px;border-radius: 100%;background: #fff;}
+.timeline-content :nth-child(odd).timeline-article .meta-year { color:#ee1c26;border: 5px solid #ee1c26;}
+.timeline-content :nth-child(even).timeline-article .meta-year {color: #888;border: 5px solid #888;}
+.timeline-article .meta-year .year {display: block;text-align: center;font-weight: 600;font-size: 30px;line-height: 90px;}
+
+/*recruitment 關於我們-經營理念*/
+.management .aj-block .col-md-12 img {max-width: 600px;width: 100%;height: auto;}
+.management .aj-block .col-md-4 img {max-width: 150px;width: 100%;height: auto;}
+.management .aj-block span {color: #ee1c26}
+.management .aj-block .title {text-align: center;display: block;font-weight: 500}
+
+/*recruitment 關於我們-人力招募*/
+.recruit-box {border: 1px solid #ccc;padding: 10px;display: flex;align-items: center;flex-wrap: wrap;}
+.recruit-box-img{margin-right: 20px;width: 140px;height: 140px;}
+.recruit-box img {width: 100%;height: auto;}
+.recruit-txt span {color: #ee1c26;font-size: 1.25rem;display: block;font-weight: 500;}
+.recruit-txt p{display: inline-block;vertical-align: text-top;margin-right: 10px;}
+.recruit-content a:hover{color:#fff8a8}
+
+/*products 商品列表*/
+.products-list {display: flex;flex-wrap: wrap;align-content: center;margin-bottom: 30px;padding: 0;}
+.products-list li {text-align: center;max-width: 180px;width: 100%;max-height: 180px;height: 180px;overflow: hidden;display: flex;flex-wrap: wrap;justify-content: center;align-content: center;margin: 10px;}
+.products-list p {margin: 0;}
+
+/*products-detail 商品介紹詳細頁*/
+/*上方商品圖+說明文字*/
+/*相關商品*/
+.products-select {margin-top: 40px;position: relative;}
+.products-select .swiper-slide {width: 120px;height: 120px;border: 1px solid #ccc;overflow: hidden;text-align: center;padding: 10px}
+.products-select .swiper-slide img {width: 80px;}
+.p-detail-block h3 {margin-left: 50%;padding-left: 15px;}
+.products-detail-content a {display: block;margin: 0 auto;}
+.p-detail-block .L-box {margin-top: -35px;}
+.p-detail-block .R-box .eclink {text-align: right;}
+.p-detail-block .R-box .eclink li {display: inline-block;}
+.p-detail-block .R-box .eclink img {max-width: 220px;max-height: 80px;width: 145px;height: auto;}
+.p-detail-block .R-box span {background: #fa9b87;padding: 5px 10px;font-size: 0.9rem;color: #FFF;}
+.p-detail-block .R-box p {margin-top: 10px;line-height: 1.7rem;}
+.p-detail-img {max-width: 550px;max-height: 450px;width: 100%;overflow: hidden;text-align: center;padding: 20px;border: 1px solid #ccc;}
+.p-detail-img img {margin: 0 auto;width: auto;height: auto;max-width: 400px; max-height: 410px;}
+.p-detail-thumbs {margin-top: 20px;font-size: 0;padding-top: 10px;}
+.p-detail-thumbs li {display: inline-block;margin: 0 10px 10px 0;overflow: hidden;}
+.p-detail-thumbs img {margin: 0 auto;max-width: 100%;width: auto;height: 60px;max-height: 60px;}
+
+/*商品資訊+營養標示tabale*/
+.info-box tbody th {width: 25%;}
+.info-box tbody td {width: 75%;}
+.nutrition-box tbody th {width: 40%;}
+.nutrition-box tbody td {width: 30%;}
+.nutrition-box .pack-unit th {background-color: #fff;border: 2px solid #f0f0f0;}
+.nutrition-box .unit th {background-color: #f0f0f0;border: 2px solid #f0f0f0;border-bottom: 2px solid #FFF;}
+.nutrition-box tbody tr:first-child td {border-top: none;}
+.nutrition-box tbody tr td {border-left: none;}
+.nutrition-box .unit,.nutrition-box td {text-align: right;}
+.nutrition-box .pack-unit span {padding-left: 10px;}
+
+/*商品介紹詳細頁 美味秘訣 //食譜詳細頁 推薦食譜*/
+.refer-box {width: 250px;height: 250px;margin: 10px;position: relative;text-align: center;overflow: hidden;}
+.refer-txt {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);width: 100%;color: #fff;z-index: 1;}
+.refer-txt h4 {font-size: 1rem;}
+/* .refer-box img {max-width: 250px;max-height: 250px;width: auto;height: auto;z-index: -1;} */
+.refer-box img {max-height: 250px;width: auto;height: 100%;z-index: -1;}
+.refer-txt:hover {opacity: 0;transition-duration: 0.2s;}
+.pot-icon {margin: 0 auto;width: 50px;height: 44px;background: url(../images/soup-w.svg) no-repeat scroll top center / cover;}
+.refer-box span {display: block;margin-bottom: 10px;}
+.refer-btn {padding: 5px 10px;border: 1px solid #fff;width: 100px;margin: 0 auto}
+.refer-txt::after {content: "";position: absolute;background-color: rgba(0, 0, 0, 0.5);width: 100%;height: 250px;display: block;z-index: -2;
+top: 50%;left: 50%;transform: translate(-50%, -50%);}
+.p-detail-qa {text-align: center;}
+.p-detail-qa .main-btn:hover {color: #ffea60;}
+
+
+/*NEWS 最新消息*/
+.news-date {position: relative;z-index: -1;}
+.news-date::after {content: "";position: absolute;width: 125px;height: 8px;top: 10px;left: -5px;background: #ffea60;z-index: -1;border-radius: 10px;}
+.s-block {border: 1px solid #ccc;}
+.title-box {position: relative;background-color: #fff7d1;z-index: -2;}
+.news-block img{width: 100%; height: auto}
+
+/*RECIPES 餐桌好味道 食譜列表*/
+.recommand-title{text-align: center;position: relative;}
+.recommand-title.dot-separator::after{ position: absolute;height: 8px;background: url(../images/ydot.svg) repeat-x scroll top center / contain;
+margin:-20px 0 0;z-index: -2;}
+.recommand-title .recipe-title{vertical-align: middle; font-size: 1.85rem;margin-bottom: 0px;}
+.recommand-title span{display:inline-block;padding-right:10px;}
+.recommand-block .row div:nth-child(1){ background: url(../images/course01.jpg) no-repeat top center / cover;}
+.recommand-block .row div:nth-child(2){ background: url(../images/course02.jpg) no-repeat top center / cover;}
+.recommand-block .row div:nth-child(3){ background: url(../images/course03.jpg) no-repeat top center / cover;}
+.recommand-block .row div:nth-child(4){ background: url(../images/course04.jpg) no-repeat top center / cover;}
+.recommand-block .row div:nth-child(5){ background: url(../images/course05.jpg) no-repeat top center / cover;}
+.recommand-block .row div:nth-child(6){ background: url(../images/course06.jpg) no-repeat top center / cover;}
+.recommand-block .row div:nth-child(7){ background: url(../images/course07.jpg) no-repeat top center / cover;}
+.recommand-block .row div:nth-child(8){ background: url(../images/course08.jpg) no-repeat top center / cover;}
+.course { max-width: 260px;height: 200px;margin: 10px;text-align: center;border-radius: 5px;overflow: hidden;padding: 0;}
+.course p, .course p::before{position: absolute; width: 100%;bottom: 0;}
+.course p { line-height:50px;color: #666;font-size: 1.2rem; z-index: 1;}
+.course p::before {content: "";display: block;background: #fff;opacity: 0.9; height: 50px;z-index: -1;}
+.course img{width:100%;height:auto;}
+.course a{display: block;  max-width: 260px;height: 200px;}
+.recipes-search-block .col-md-6{margin:10px 0}
+.select-box::before, .recipes-search-box::before, .recipes-search-box .searchButton{position: absolute;content: "\f107";font-family: "Font Awesome 5 Free";font-weight: 900;font-size: 1.5rem;line-height: 45px;text-align: center;color: #fff;right: 1rem;top: 0;height: 100%;width: 45px;background: #ee1c26;border-radius: 10px;border: 1px solid #ee1c26;}
+.recipes-search-box::before{content: "\f002";}
+.recipes-select, .recipes-search-box input{display: inline-block;width: 100%;height: calc(2.8rem + 2px);padding: .375rem 1.75rem .375rem .75rem;line-height: 1.5;color: #495057;vertical-align: middle;background: rgb(255,255,255);background: linear-gradient(90deg, rgba(255,255,255,1) 70%, rgba(255,255,255,0) 70%);border: 1px solid #ccc;border-radius: 10px;-webkit-appearance: none;position: relative;}
+.select-box select::-ms-expand { display: none; }
+.recipes-box{overflow: hidden; border: 1px solid #ccc;padding: 0; margin: 10px; max-width: 550px ;}
+.recipes-box a{width: 100%; display: flex;}
+.recipes-box a:hover {color: #ee1c26}
+.recipes-box p{overflow: hidden;}
+.recipes-box .img-box{ width: 60%}
+.recipes-box p img{width: 100%; height: auto;}
+.recipes-box .text-box{width:40%;padding: 20px 0 0 20px;}
+.recipes-box .text-box img, .search-result-recipe img{width: 35px; height: auto;padding-right: 10px;vertical-align: text-top;}
+.recipes-box span{display: block;font-size: 1.1rem;margin-bottom: 10px}
+.recipes-box span.recipe-title{font-size: 1.5rem;display: inline-block;margin-bottom: 10px}
+
+/*RECIPES-DETAIL 餐桌好味道 食譜詳細頁*/
+.recipe-block {max-width: 100%;}
+.recipe-block ~ .recipe-block{background: #f0f0f0;border-radius: 10px;padding: 30px}
+.recipe-title {color: #333;position: relative; margin-bottom: 20px;display: inline-block;}
+h2.recipe-title{font-size: 1.7rem;}
+.recipe-title::before {content: "";position: absolute;width: 100%;height: 15px;top: 10px;right: -5px;background: #fcdd2d;z-index: -1;border-radius: 10px;}
+.recipe-block .redline > div{width: 3px;background: #ee1c26;margin: 20px auto 0;height: 90%;}
+.recipe-top {position: relative;}
+.recipe-img {max-width: 750px;width: 100%;overflow: hidden;float: left; min-height: 500px}
+.recipe-img img {width: 100%;height: auto;}
+.recipe-info{position: absolute;bottom: 0;right: 0;float: left;}
+.recipe-info ul {font-size: 0;}
+.recipe-info ul li {font-size: initial;display: inline-block;border-radius: 10px;width: 110px;height: 180px;margin-right: 5px;overflow: hidden;
+text-align: center;border: 2px solid #f0f0f0;background: #fff;color: #888;}
+.recipe-info ul li img {max-width: 100px;width: 100%;height: auto;}
+.recipe-info ul li p {width: 110px;height: 90px;background-repeat: no-repeat;background-size: contain;background-color: #f0f0f0;background-position: center 20%;margin-bottom: 20px;}
+.recipe-info ul li span {font-size:1.7rem;font-family: 'Baloo Chettan', cursive;padding-right: 3px; display:block;line-height:1.1}
+.recipe-info ul li:nth-child(1) {background-color: #f0f0f0;display: block;margin-bottom: 10px;line-height: 170px;}
+.recipe-info ul li:nth-child(2) p {background-image: url(../images/r_icon_time.svg);background-size: 45px; background-position: center center;}
+.recipe-info ul li:nth-child(3) p {background-image: url(../images/r_icon_kcal.svg);background-size: 45px; background-position: center center;}
+.recipe-info ul li:nth-child(4) p {background-image: url(../images/r_icon_serve.svg);background-size: 45px; background-position: center center;}
+.recipe-block h3 {display: inline-block;   }
+.recipe-block h3 img {display: inline-block;vertical-align: text-bottom;padding-right: 3px;}
+.recipe-box {max-width: 450px;text-align: center;}
+.recipe-box ul li {margin-bottom: 20px;position: relative;}
+.recipe-box ul li span {display: block; text-align: left;}
+.recipe-box a{ color: #ee1c26}
+.recipe-box a:hover{color: #ee1c26}
+.recipe-box .dot-separator::after {position: absolute;background: url(../images/dot.svg) repeat-x scroll 0 0 / contain;margin:0;bottom: -12px;}
+.recipe-nutrition{overflow: auto;}
+.recipe-nutrition table{min-width: 910px;}
+.step-box.dot-separator::after{  background: url(../images/dot.svg) repeat-x scroll 0 0 / contain; opacity: 0.5;}
+.recipe-step{ text-align: center; max-width: 600px; margin: 0 auto;}
+.recipe-step .sub-title::after{content: "..................";}
+.recipe-step .step-box{text-align: left;}
+.recipe-step .step-box img{width: 100%;height: auto;}
+.recipe-step .step-box p{margin-bottom: 10px}
+.recipe-step .step-box span{font-size: 3rem;font-family: 'Baloo Chettan', cursive;padding-right: 15px;color: #ee1c26; color:#ee1c26;}
+.recipe-video {margin-top:-20px }
+.recipe-video a{background: yellowgreen; padding: 5px 10px; color: #FFF;border-radius: 5px} 
+.recipe-video a:hover{background: #fcdd2d;color: #FFF} 
+/*Contactus 聯絡我們*/
+.contact-box,.form-box {border-radius: 10px;}
+.form-box{margin-right: -15px;margin-left: -15px;}
+.contact-box .col-md-6 > div {display: inline-block;vertical-align: top; color: #fff;}
+.contact-txt p{display: inline-block;vertical-align: top; margin-right: 10px;}
+.contact-box .col-md-6 p{margin-top: 10px;}
+.contact-box .col-md-6 a, .contact-txt :first-child{font-size: 1.6rem; color: #fff;}
+.contact-txt :nth-child(2){line-height: 1.2; font-size: 1.2rem; }
+.contact-box .col-md-6 span{ display:block;font-size: 1.2rem; border-bottom: 2px solid #fff; padding-bottom: 10px;} 
+.img-phone,.img-time {margin-right:30px;text-align: left;width: 80px;height: 80px;background-size: contain;background-repeat: no-repeat;}
+.img-phone {background-image: url(../images/contactus.svg);}
+.img-time {background-image: url(../images/contactus_2.svg);}
+.form-box.form-group {text-align: left;}
+.form-box label {color: #888;font-size: 0.9rem;}
+.form-box label::after {content: "*";color:#ee1c26;}
+.form-box .col-md-3 {align-self: flex-end;margin-bottom: 1.3rem;}
+.form-box .v-code .col-md-4{text-align: right;}
+.form-box .v-code input, .form-box .v-code img{vertical-align: middle;display: inline-block;}
+.form-box .v-code input{width: 180px;margin-right: 10px;}
+
+/*QA 常見問題 */
+.faq-brand {font-size: 1.125rem;color: #ee1c26; color:#ee1c26;}
+.faq {list-style: none;padding: 20px;}
+.faq li {border: 1px solid #ccc;margin-bottom: 15px;background-color: #f0f0f0;}
+.faq li.active .answer {padding: 20px;height: auto;}
+.faq .answer {padding: 0 20px;height: 0;font-size: 1rem;line-height: 24px;overflow: hidden;background-color: #fff;transition: height 0.5s ease, padding-bottom 0.5s ease;}
+.faq .answer p {line-height: 1.8rem;}
+.faq .ans-style{font-family:"baloo chettan";font-size:1.4rem;font-weight: 600;}
+.faq .question::before, .faq .ans-style{color: #ee1c26; color:#ee1c26;}
+.faq .question {position: relative;color: #888;font-size: 1.125rem;font-weight: 600;cursor: pointer;margin: 0;line-height: 30px;padding: 10px;}
+.faq .question::before {font-family:"baloo chettan";font-size:1.4rem;content: "Q";display: inline-block;width: 30px;height: 30px;border-radius: 50%;text-align: center;background-color: #FFF;margin-right: 5px;}
+
+/*QA toggle箭頭*/
+.faq .question.open-toggle:after {font-family: 'Font Awesome 5 Free';font-weight: 900;font-size: 1rem;content: "\f107";color: #888;float: right;margin-top: 3px;line-height: 1.5;transition-duration: 0.3s;}
+.faq li.active .question.open-toggle:after {transform: rotate(180deg);}
+
+/*QA 商品錨點*/
+.faq-anchor {display: flex;flex-wrap: wrap;justify-content: center;}
+.faq-anchor div {border: 1px solid #ccc;margin: 10px;}
+.faq-anchor a {text-align: center;display: block;width: 255px;}
+.faq-anchor a img{width: 150px; height: auto;}
+
+/*footer*/
+footer {color: #fff;margin-top: 100px;font-size: 0.9rem;}
+.footer-top {width: 100%;height: 50px;background: url(../images/footetop.png) repeat-x scroll top center / cover;}
+.copyright {padding: 20px 30px;background: #ee1c26;}
+.copyright a {color: #fff;}
+.copyright a:hover {color:#fff8a8;}
+.copyright span,.copyright p {font-size: 0.9rem;line-height: 1.5;}
+.footer-outlink {border-bottom: 1px solid #fff;padding: 15px;display: flex;justify-content: space-around;}
+.footer-outlink a {display: flex;align-items: center;}
+.footer-outlink a i {padding-right: 0.9rem;}
+.footer-link {margin-top: 30px;}
+.footer-link li {display: inline;}
+.footer-link li:first-child::after {content: "";width: 2px;background: #fff;margin-right: 20px;}
+/*footer END*/
+
+/*SELECTED 嚴選素材*/
+.selected-block h1{color: #ff9600}
+.selected-block p{ color: #333;font-size: 1.2rem}
+.selected-block p span{ color: #888; font-size: 1rem; display: block; margin-bottom: 20px}
+.selected-block .description, .selected-box {position: relative;}
+.selected-block .description p{display: inline-block}
+.selected-block .description img{max-width: 450px; width: 250px;display: inline-block}
+.selected-box img{width: 100%;height: auto;}
+.port-box img{max-width: 300px;}
+.selected-box h3 {font-weight: 400;font-size: 1.5rem;display: inline-block;color: #fff;position: absolute;transform: rotate(-3deg);top: -40px;
+left: 0;}
+.selected-box:nth-child(4) h3 {background: url(../images/selectedtag01.png)no-repeat center / contain;padding: 30px;}
+.selected-box:nth-child(4) {margin-top: 50px;padding: 60px 0 50px 60px;background: url(../images/selectedBG01.png)no-repeat center / cover;}
+.selected-box:nth-child(5) h3 {background: url(../images/selectedtag02.png)no-repeat center / contain;padding: 30px;top: 0px;}
+.selected-box:nth-child(5) {padding: 40px 50px 60px;background: #cde9f6 url(../images/selectedBG02.png)no-repeat center bottom / cover;border-radius: 30px;}
+.selected-box:nth-child(7) h3 {background: url(../images/selectedtag03.png)no-repeat center / contain;padding: 30px;top: 0px;}
+.selected-box:nth-child(7) {padding: 110px 0 50px 60px;}
+.selected-box:nth-child(8) h3 {background: url(../images/selectedtag03.png)no-repeat center / contain;padding: 30px;top: 0px;}
+.selected-box:nth-child(8) {padding: 110px 0 50px 60px;}
+.selected-box .step{position: absolute;top:55%;left: 52%;transform: translate(-55%, -52%);width: 70%;}
+.selected-box .step p{text-align: center;color: #ff9600;font-size: 1.3rem;font-family: 'Baloo Chettan', 'Noto Sans TC', sans-serif, Arial, "微軟正黑體", "Microsoft JhengHei";}
+.selected-box.fish-made .row > div{ position: relative;}
+.qulity-check{flex-direction: row-reverse; }
+.qulity-check img{max-width: 350px;}
+.qulity-check .col-md-8:before{content: "";display: block;width: 0; height: 0; border-top: 15px solid transparent;border-bottom: 15px solid transparent;border-right: 35px solid #ffe9ee;position: absolute;bottom:30%;left: -30px;}
+.qulity-check .col-md-8{position: relative;background: #ffe9ee ;border-radius: 30px;padding: 50px;}
+.qulity-check .col-md-4{align-self: flex-end;}
+.dry-box {font-size: 0;}
+.dry-box li{ display: inline-block; margin-right: 20px;}
+.dry-box li p{font-size: 0.9rem;color: #ff9600;}
+.selected-block .resp-container{position: relative;overflow: hidden;/*padding-top: 56.25%;*/ max-width:800px;height: 350px;margin:0 auto;}
+.selected-block .resp-container iframe {position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: 0;}
+/*YAM 鮮味百科*/
+.yum-box span{display: block;color: #ee1c26; color:#ee1c26;font-size:1.3rem;}
+.yum-box h2{color: #ff9600;}
+.yum-box img{width: 100%;height: auto;}
+.nature-box .col-md-8 img{max-width: 400px;}
+.nature-box .col-md-3 img, .milk-box .col-md-3 img{max-width: 240px;}
+.aminoacid－box{background: #fff5e7;}
+/*AGF*/
+.agf-wrap img{ width: 100%; height: auto;}
+.agf-wrap h2 img{max-width: 550px;}
+.agf-wrap h3{font-size:2rem}
+.agf-wrap p{font-size:1.2rem; line-height: 1.8;}
+.agf-og{color: #E45947;}
+.agf-brown{color: #8D675E;}
+.agf-log{color: #FF966F;}
+.agf-top{background: url(../images/agf/bg.jpg)no-repeat top / cover;padding: 50px 50px; color: #FFF;}
+.agf-top div {display: flex; align-items: center;  font-size:1.2rem; text-align: left;}
+.agf-top div .num{font-family: 'Baloo Chettan'; font-size:4rem;}
+.agf-top div .num::after{content: "."; color:#D19F6A ; font-size:3.5rem; margin-right:20px}
+
+.t2a-title sub, .agf-title sub{bottom: -1px; font-size: 65%;}
+.agf-bg{background: url(../images/agf/bg02.jpg)no-repeat right 40% top / cover; position: relative;z-index: 1;}
+
+.agf-bg::before{content: "";position: absolute;top:0;left:0; width: 100%; height: 100%; background:rgba(79,45,44,0.8);z-index: -1;}
+ /* .agf-bg{background:rgba(79,45,44,0.8);position: relative}
+
+.agf-bg::before{ width: 100%; height: 100%; 
+  content: "";position: absolute;top:0;left:0; background: url(../images/agf/bg02.jpg)no-repeat right 40% top / cover; ;z-index: -2;
+}  */
+.agf-box{text-align: center;}
+.agf-title img{max-width: 30px;vertical-align: bottom;}
+.agf-box .row{justify-content: center; align-items: center;}
+.agf-box .title-box{text-align:left;z-index: 0; padding: 20px 50px 20px 0; position: relative; background: #fff;}
+.agf-box .agfs-title{ font-size:1.4rem;
+    background: url(../images/agf/titlebar-1-l.png)no-repeat left top / contain,
+    url(../images/agf/titlebar-1-c.png)no-repeat center top / contain,
+url(../images/agf/titlebar-1-r.png)no-repeat right top / contain;
+    display: inline-block;color: #fff; padding: 2px 20px ;}
+/* .agf-box .row .agfs-title{
+    
+    background-size: cover, 100%;
+    background-position: left center, right center;} */
+.agf-box .row > div p{text-align: left;}
+.agf-bg .title-box{background: none; z-index: 0; padding: 20px 50px 20px 0;}
+.agf-box .title-box::after{content: ""; position: absolute; right:0; top:0; display: block; width:150px; height:150px; background: url(../images/agf/coffee_bag.png)no-repeat left top / contain; }
+.agf-bg .title-box::after{content: ""; position: absolute; right:100px; top:0; display: block; width:150px; height:150px; background: url(../images/agf/cup.png)no-repeat left top / contain; }
+
+
+.agf-box .agf-xs-title{color: #E45947; font-size: 1.4rem;font-weight:500;}
+.agf-xs-title::before,.agf-xs-title::after {content: ""; display: inline-block; vertical-align: middle; width: 70px; height: 20px; background: url(../images/agf/de02.png)no-repeat right top / contain; margin: 0 10px}
+p.arrowdown{color:#8D675E;  line-height: 30px;-webkit-animation: floatDown 2s infinite;
+    animation: floatDown 2s ease-in-out infinite;
+}
+
+    @-webkit-keyframes floatDown {
+        0%, 100% {-webkit-transform:  translate(0, 0);}
+        50% {-webkit-transform:  translateY( 10px);}
+      }
+      @keyframes floatDown {
+        0%, 100% {transform: translate(0, 0);}
+        50% {transform: translateY(10px);}
+
+      } 
+
+p.arrowdown::after{font-size:6rem;display: block;font-family: "Font Awesome 5 Free";font-weight: 900;content: "\f0dd"; margin-bottom: 50px; margin-top:-10px}
+.agf-box .text-box{text-align: left;border: 10px solid #FFE09B; border-radius: 15px; padding: 20px 100px 20px 20px; max-width: 650px; margin: 30px auto; color: #E45947; position: relative;font-weight: 500;}
+.agf-box .text-box::after{content: "";background: url(../images/agf/drink_coffee.png)no-repeat right top / contain;position: absolute; top:25px;right:-45px; width: 150px; height:150px;margin-bottom: 30px;}
+.three-way{border: 10px solid #FFE09B; border-radius: 15px; padding: 30px; }
+.three-way p{color: #8D675E;}
+.three-way img{max-width: 230px;}
+.agf-box h5{font-size:1.3rem}
+.agf-box h4 i, .agf-box h5 i{font-style: normal;}
+.agf-bg p{color:#fff}
+.agf-bg .agfs-title {
+    background: url(../images/agf/titlebar-2.png)no-repeat left top / contain, url(../images/agf/titlebar-2.png)no-repeat right top / contain;
+}
+.agf-box .video-wrap{background: url(../images/agf/videobg.jpg)no-repeat left top / cover; padding: 30px;}
+.agf-box .resp-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    margin: 0 auto;
+}
+.agf-box .resp-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.agf-box .title-box br{display:none}
+
+.agf-box .mob-show{display: none}
+/*RWD*/
+@media screen and (min-width: 992px) {
+    /*NAV BAR*/
+    .main-nav .nav-list .nav-link:hover {transition-duration: 0.2s;color: #ee1c26; color:#ee1c26;}
+    .main-nav .nav-list .dropdown:hover .dropdown-menu {display: block;}
+    .main-nav .nav-list :first-child.separator::before,
+    .main-nav .nav-list .separator::after {position: absolute;content: "";width: 2px;margin: 8px 0px;background: #888;top: 0;bottom: 0;}
+    .main-nav .nav-list :first-child.separator::before {left: 0;}
+    .main-nav .nav-list .separator::after{right: 0;}
+    .main-nav .nav-list .dropdown .dropdown-menu {margin-top: 0;left: 50%;transform: translateX(-50%);text-align: center;}
+}
+
+@media screen and (max-width: 1200px) and (min-width: 992px) {.daily-thumbs {width: 120px;}.contact-txt :first-child{display: block;}
+.agf-bg .title-box::after{right:0px}}
+@media screen and (max-width: 1200px) {
+    .recipe-info {position: relative; max-width: 100%;width: 100%;margin-top: 20px;}
+    .recipe-info ul{display: flex;}
+    /*RECIPES 餐桌好味道*/
+    .recipes-box span.recipe-title {font-size: 1.3rem; margin-bottom:5px}
+    .recipes-box span {font-size: 1rem;}
+    .selected-block .description img{width: 350px;}
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {.products-select{margin-top: 70px;} }
+@media screen and (max-width: 991px) {
+    /*NAV BAR*/
+    .main-nav a{transition-duration: 0s ;}
+    .main-nav .nav-list {overflow-y: auto;}
+    .main-nav .nav-list li {text-align: left;margin: 10px;background: #fff;}
+    .main-nav .navbar-brand img {width: 70px;height: auto;}
+    .main-nav {width: 100%;position: absolute;top: 0;z-index: 10;list-style: none;text-align: center;box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);}
+    .nav-box {border-top: 1px solid #ccc;margin-top: 10px;position: relative;overflow-x: hidden;}
+    .main-nav .nav-list .nav-link {position: relative;font-weight: 500;padding: 10px;border: 1px solid #ccc;border-radius: 10px;}
+    .main-nav .nav-list .nav-link::after {position: absolute;font-family: "Font Awesome 5 Free";font-weight: 900;content: "\f105";right: 15px;transition: 0.2s; }
+    .main-nav .nav-list .nav-link:hover, .main-nav .nav-list .nav-link:focus, .main-nav .nav-list .nav-link:active{background: #ee1c26;color:#fff;}
+    .nav-search {margin: 20px auto;justify-content: center;}
+    .recipes-wrap .page-bn, .yum-wrap .page-bn{margin-top: 110px;}
+    .company-wrap .page-bn{margin: 20px 0;}
+    .main-nav .nav-list .show .nav-link::after {transform-origin:center;transform:rotate(90deg);transition: 0.2s;}
+    .main-nav .nav-list .dropdown-menu {border: none;border-radius: 0;background: none;padding: 0; margin: 0;}
+    .main-nav .nav-list .dropdown-item {background: #f0f0f0;padding: 10px 0 10px 30px; border-radius: 10px; margin: 5px 0;}
+
+    /*index 首頁*/
+    .wrapper .main-banner{margin-top:70px; }
+    .daily-thumbs {width: auto;}
+    .logo-box {width: 150px;height: 150px;}
+    .index-prodcuts-block {height: 360px;}
+    .index-prodcuts-block .logo-box .main-btn {display: none;}
+    .index-news {width:50%;}
+    .index-news-box, .index-news-box .news-title {width: 95%;}
+
+    /*history 關於我們-歷史沿革*/
+    .Ajtimeline .center-line {left: 30%;}
+    .timeline-article .meta-year {left: 28%;width: 100px;}
+
+    /*news 最新消息*/
+    .main-card {width: 300px}
+
+    /*prodcuts-detail 商品介紹詳細頁*/
+    .p-detail-block h3 {margin-left: 0;}
+    .products-detail-content a {display: block;}
+    .p-detail-block .L-box {margin-top: 0;}
+    .p-detail-block .R-box {margin-top: 20px;}
+    .refer-block {justify-content: center;}
+
+    /*contact us 聯絡我們*/
+    .img-phone, .img-time { margin: 0;}
+    .form-box .v-code .btn  { margin: 0;}
+    .contact-box .col-md-6 > div {display: block; margin-bottom: 10px;}
+
+    /*SELECTED 嚴選素材*/
+    .selected-box:nth-child(4),
+    .selected-box:nth-child(5),
+    .selected-box:nth-child(7),
+    .qulity-check .col-md-8 {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    /*RECIPE-DETAIL 餐桌好味道 食譜詳細頁*/
+    .recipe-img{min-height: auto;}
+
+    /*AGF*/
+    .agf-wrap p{font-size: 1rem; }
+    .agf-box{padding: 30px;}
+    .agf-box .agfs-title{font-size:1.2rem}
+    .agf-box h5 {font-size: 1.2rem; line-height:1.5}
+    .agf-box h4 {font-size: 1.3rem;line-height: 1.5;}
+    .agf-wrap h3 {font-size: 1.5rem;}
+    .agf-box .title-box::after{width:100px; }
+    .agf-bg .title-box::after{ width:120px;}
+}
+
+@media only screen and (max-width: 830px) {
+    /*history 關於我們-歷史沿革*/
+    .Ajtimeline .center-line {margin-left: 0;left: 50px;}
+    .timeline-article .meta-year {margin-left: 0;left: 5px;}
+    .timeline-article .content-left-container,.timeline-article .content-right-container {max-width: 100%;width: auto;float: none;margin-left: 110px;min-height: 53px;}
+    .timeline-article .content-left-container {margin-bottom: 20px;}
+    .timeline-article .content-left, .timeline-article .content-right {padding: 10px 25px;min-height: 65px;}
+    .timeline-article img {display: inline;margin: 0 5px 0 0;}
+}
+
+@media screen and (max-width: 768px) {
+    /*NAV*/
+    .main-tabs .nav-link {padding: .5rem .8rem;border-bottom: none;}
+    .tab-content{padding: 20px;}
+    /*footer*/
+    .footer-outlink {display: block;}
+    .footer-outlink li {margin: 10px auto;}
+
+    /*index 首頁 最新消息區*/
+    .index-news-box, .search-result .list-link {width: 100%;}
+    .list-link .news-title {width: 95%;}
+    /*index 首頁 每日一品區*/
+    .daily-info {margin-top: 20px;}
+    .daily-time span img {width: 30px;height: auto;margin-right: 5px;}
+    /*index 首頁 商品介紹區*/
+    .index-prodcuts-block {height: 250px;}
+    .logo-box {width: 100px;height: 100px;}
+    .index-knowledge-content{padding-top: 30px;}
+
+    /*news 最新消息*/
+    .card-content{justify-content: center;}
+
+    /*products-detail 商品介紹詳細頁 */
+    .products-detail-content.main-content {margin-top: 30px;}
+    .p-detail-block .R-box .eclink {text-align: center;}
+    .p-detail-block .R-box .eclink li {margin: 10px 5px;}
+
+    /*RECIPE 餐桌好味道 食譜列表*/
+    .recipes-wrap .recipes-content{margin-top: 50px}
+    .recipes-box .text-box {padding: 15px 0 0 15px;}
+    .course {max-width: 200px;}
+    /*RECIPE-DETAIL 餐桌好味道 食譜詳細頁*/
+    .recipe-info ul {justify-content: space-between;}
+    .recipe-info ul li {margin: 0;}
+    .redline{display: none;}
+
+    /*QA 常見問題*/
+    .faq .question {font-size: 1rem;}
+    .faq {padding: 0;}
+    .qa-brand {margin: 0;}
+
+    /*聯絡我們*/
+    .img-phone, .img-time {margin-right: 20px; width: 50px;height: 50px;}
+    .form-box .v-code {text-align: center}
+    .form-box .v-code .col-md-4{text-align: center; margin-top: 10px;}
+
+    /*SELECTED 嚴選素材*/
+    .selected-box h3 {font-size: 1.2rem;}
+    .selected-box:nth-child(4), .selected-box:nth-child(5), .selected-box:nth-child(7), .qulity-check .col-md-8 {padding-left: 20px;padding-right: 20px;}
+    .qulity-check .col-md-8:before {
+        border-style: solid;
+        border-width: 80px 50px 0 50px;
+        border-color: #ffe9ee transparent transparent transparent;
+        bottom: -10%;
+        left: 30%;
+    }
+    .selected-box:nth-child(5) {background: #cde9f6 url(../images/selectedBG02m.png)no-repeat right bottom / contain;}
+    .selected-box .wood .col-md-3 {display: none;}
+    .selected-box .environment img {max-width: 150px}
+    .nature-box .col-md-8 img {max-width: 300px;}
+    .nature-box .col-md-3 img {max-width: 100%;}
+    .selected-block .resp-container{padding-top: 56.25%;height: auto;}
+
+    /*AGF*/
+    .agf-box .mob-show{display: block}
+    .agf-box .web-show{display: none}
+    .agf-wrap h3 {font-size: 1.3rem;}
+    .agf-box{padding: 20px;}
+    .three-way{padding: 10px; margin-top:60px;}
+    .agf-bg .title-box{padding:20px 0;}
+    .agf-box .agfs-title {
+        background:#FF9D00;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .agf-bg .agfs-title {
+        background:#E7594B;
+    }
+    .agf-box .title-box::after{right:-50px;top:30px }
+    .agf-bg .title-box::after{ right:-90px;width:120px;top:0px}
+    .arrowdown{margin: 20px 0;}
+    .agf-bg{margin-top: 0px;}
+    .agf-box .video-wrap{background: none; padding: 0px; margin: 30px auto;}
+
+
+}
+
+@media screen and (max-width: 500px) {
+    .main-content{margin-top:100px}
+    .breadcrumb{display: none;}
+    p {font-size: 0.9rem;line-height: 1.8rem;}
+    .company-wrap .page-bn {margin-top: 20px;}
+    .recipes-wrap .page-bn, .yum-wrap{margin-top:100px;}
+
+    /*NAV BAR*/
+    .main-nav .navbar-brand img {width: 50px;height: auto;}
+    .global-link {display: none;}
+    .nav-search .input-group {width: 300px;}
+    .main-title h2 {font-size: 1.25rem;}
+
+    /*全站TAB*/
+    .main-tabs .nav-item {margin: 0 1px;}
+    .main-tabs .nav-link {font-size: 0.9rem;}
+    .tab-content {padding: 10px;}
+    .main-content table {font-size: 0.8rem;line-height: 1.3rem;}
+    
+
+    /*footer*/
+    .copyright { padding: 0 0 30px;}
+
+    /*index 首頁*/
+    .main-banner .swiper-button-next,.main-banner .swiper-button-prev {top: 70%;}
+    .index-content {margin-top: 30px;}
+    .index-title {margin: 10px 0;padding-left: 50px;}
+    .index-title::before {width: 50px;height: 40px;}
+    .index-title h2 {font-size: 1.5rem;}
+    .hot-deal {margin-top: -70px }
+    /*index 首頁 最新消息*/
+    .index-news-content {margin-bottom: 30px;}
+    .index-news {width:auto; padding: 0;}
+    .index-news .list-img {display: none;}
+    .index-news .dot-separator::after {margin: 10px 0;}
+    .index-news-box span, .index-news-box .news-title{width: 92%;}
+    /*INDEX 首頁 每日一品*/
+    .daily-info h3 {font-size: 1.2rem;}
+    .daily-time span, .material h5 {font-size: 1rem;}
+    .material p {line-height: 1rem;}
+    .daily-txt,.daily-product {display: block;margin: 0 auto;}
+    .recipe-thumbs .swiper-pagination, .swiper-button-black {display: none; }
+    .recipe-thumbs{height: 0;}
+    .date-tag { width: 90px;height: 78px;font-size: 1.5rem;}
+    .daily-product {position: absolute;right: 0;bottom: 0;width: 150px;}
+    .daily-product img {width: 80px;height: auto;}
+    /*INDEX 首頁 商品介紹*/
+    .index-prodcuts-block {height: 150px;}
+    .p-link {opacity: 1;}
+    .p-link img {opacity: 0.5}
+    .logo-box {width: 80px;height: 80px;visibility: visible;opacity: 1;z-index: 3;}
+    .hon-box {left: 5%}
+    .vono-box {left: 23%}
+    .amino-box {left: 40%}
+    /*INDEX 首頁 對味生活*/
+    .index-knowledge-content{padding-top: 0;}
+    .knowledge-box p {display: inline-block;vertical-align: middle;width: auto;padding: 10px 0;border-bottom: 2px solid #ee1c26}
+    .knowledge-box a { width: 300px;padding: 10px 20px;}
+    .knowledge-box img {width: 80px;height: auto;}
+
+    /*COMPANY 關於我們 */
+    .about-title-box span,.recruit-txt span {font-size: 1.1rem;}
+    .recruit-box {display: block;text-align: center;}
+    .recruit-txt {margin-top: 15px;}
+    .recruit-box-img {margin: 0 auto;}
+
+    /*HISTORY 關於我們-歷史沿革*/
+    .timeline-article .content-left-container,.timeline-article .content-right-container {margin-left: 65px;}
+    .timeline-article .content-left, .timeline-article .content-right {padding: 10px 15px;}
+    .Ajtimeline .center-line {left: 35px;}
+    .timeline-article .meta-year {position: absolute;top: 0;left: 0px;width: 80px;height: 80px;margin-left: 0;}
+    .timeline-article .meta-year .year {font-size: 1.375rem;line-height: 70px;}
+    .timeline-article p {margin: 10px 0 0 0;}
+    .article-number {float: none;display: inline-block;}
+    .content-left {display: none;}
+
+    /*NEWS 最新消息*/
+    .main-card {width: 285px;margin: 10px auto;}
+
+    /*PRODUCTS 商品介紹*/
+    .products-list {justify-content: center;}
+    /*PRODUCTS-DETAIL 商品介紹詳細頁*/
+    .products-select {margin-top: 90px;}
+    .p-detail-block .R-box .eclink li {display: block;}
+    .p-detail-thumbs {margin-top: 10px;font-size: 0;}
+ 
+    /*RECIPES 餐桌好味道 食譜列表*/
+    .recipes-wrap .main-content{margin-top: 30px;}
+    .recipes-search-block{margin: 30px 0 20px}
+    .recipes-wrap .page-bn, .yum-wrap .page-bn{height: 220px;}
+    .recipes-wrap .page-bn::after{content: "";position: absolute;background: url(../images/banner/top_all.jpg) no-repeat scroll center center / cover;display: block;width: 100%;height: 220px;z-index: 2;top: 0; left: 0;}
+    .yum-wrap .page-bn::after{content: "";position: absolute;background: url(../images/banner/bnr_UGW.jpg) no-repeat scroll center center / cover;display: block;width: 100%;height: 220px;z-index: 2;top: 0; left: 0;}
+    /*RECIPES-DETAIL 餐桌好味道 食譜詳細頁*/
+    .recommand-block{display: none}
+    .recipe-block ~ .recipe-block {padding: 15px;}
+    .recipe-info {margin-top: 10px;}
+    .recipe-info ul li{width: 110px; height: 135px;}
+    .recipe-info ul li:nth-child(1) {display: none;}
+    .recipe-info ul li p {width: 100%; height: 60px; margin-bottom: 15px }
+
+    /*CONTACTUS 聯絡我們*/
+    .contact-box.p-a50 {padding: 20px;}
+    .form-box .v-code input { margin-right: 0px;margin-bottom: 10px;}
+
+    /*QA 常見問題*/
+    .faq-anchor {display: block;}
+    .faq-anchor a {padding: 10px;font-size: 0.9rem;text-align: left;}
+    .dry-box li{width: 47%;margin-right: 5px;}
+
+    /*AGF*/
+    .agf-top{padding: 20px;}
+    /* .agf-box {padding: 0;} */
+    .agf-wrap p {font-size: 0.9rem;}
+    .agf-top div .num {font-size: 3rem;}
+    .agf-box .agf-xs-title ,  .agf-box .agfs-title{font-size: 1.1rem;}
+
+    .agf-box h5{font-size: 1rem;}
+    .agf-top div{margin: 20px 0;}
+    .agf-xs-title::before, .agf-xs-title::after {width: 50px; margin: 0 5px;}
+    .agf-box .text-box {padding: 15px 50px 15px 15px;}
+    .agf-box .text-box::after {top: 51%;right: -11%; width: 120px;}
+    p.arrowdown::after{font-size:4rem}
+    .agf-box .title-box::after {right: 0px;top: 45px;width: 80px;}
+    .agf-box h3{line-height:1.5}
+    .agf-bg .title-box::after { right: -10px;top: 0px;width: 75px;}
+    .agf-box .title-box{margin-bottom: 10px;}
+    .agf-box .title-box br{display:inline-block}
+
+    .agf-title img {width: 20px;}
+
+
+}
+
+@media screen and (max-width: 450px) {
+    /*Nav*/
+    .nav-list li {margin: 10px 0;}
+    .recipes-box .text-box { padding: 5px 0 0 10px;}
+    .recipes-box span.recipe-title{font-size: 1.1rem}
+    .recipes-box .text-box img {width: 30px;}
+    .recipes-box span{ font-size: 0.9rem; margin-bottom: 5px;}
+
+}
+
+@media screen and (max-width: 430px) {
+    .p-detail-img img {width: 100%;height: auto;}
+    .contact-txt :first-child {display: block;}
+    .faq-anchor {display: flex;}
+    .faq-anchor a {width: 95px; padding: 0px;font-size: 0.9rem;text-align: left;}
+    .faq-anchor a img {width: 90px;}
+    .faq-anchor div {margin: 5px;}
+}

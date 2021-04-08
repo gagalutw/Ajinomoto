@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Ajinomoto</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/shortcodes.css">
+</head>
+
+<body>
+    <section class="wrapper">
+    <section class="container">
+        <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">常見問題</li>
+                </ol>
+            </nav>
+
+        </div>
+        <!-- TOP END -->
+
+
+        <section class="main-content m-t70">
+            <div class="main-title">
+                <h2>常見問題</h2>
+            </div>
+
+            <!-- tab- Start -->
+            <ul class="nav nav-tabs main-tabs" role="tablist">
+                <li class="nav-item">
+                    <a id="tab-qa-products" href="#qa-products" class="nav-link active" data-toggle="tab"
+                        role="tab">商品相關</a>
+                </li>
+                <li class="nav-item">
+                    <a id="tab-qa-use" href="#qa-use" class="nav-link" data-toggle="tab" role="tab">使用問題</a>
+                </li>
+            </ul>
+            <!-- tab- End -->
+            <!--tab-content Start -->
+            <div class="tab-content p-a35" role="tablist">
+                <!-- 1st-tab Start -->
+                <div id="qa-products" class="tab-pane fade show active" role="tabpanel"
+                    aria-labelledby="tab-qa-products">
+                    <div class="m-b30 faq-anchor">
+                        <div><a href="#hondashi"> <img src="images/logo_hondashi_s.png" width="150"></a></div>
+                        <div><a href="#vono"> <img src="images/logo_vono_s.png" width="150"></a></div>
+                        <div><a href="#amino"> <img src="images/logo_amino_s.png" width="150"></a></div>
+                    </div>
+                    <div class="faq-container">
+                        <h2 class="faq-brand" id="hondashi"><img src="images/logo_hondashi_s.png" width="80" alt="ほんだし®/烹大師®">
+                        </h2>
+                        <div class="dot-separator"></div>
+                        <ul class="faq">
+                            <li>
+                                <h3 class="question open-toggle">Frequently Asked Quesquently Asked quently Asked tion?
+                                </h3>
+                                <!--0517調整 -->
+                                <div class="answer">
+                                    <p class="ans-style">A.</p>
+                                    <p>Answer. Donec vitae tellus risus. Aenean sed fermentum risus. Phasellus
+                                        venenatis
+                                        ultricies dignissim. Nunc ante lectus, accumsan non porta at. Donec vitae
+                                        tellus risus. Aenean sed
+                                        fermentum risus. Phasellus venenatis ultricies dignissim.</p>
+                                </div>
+                                 <!--0517調整 -->
+                            </li>
+                            <li>
+                                <h3 class="question open-toggle">Frequently Asked Question?
+                                </h3>
+                                <div class="answer">
+                                    <p>Answer. Donec vitae tellus risus. Aenean sed fermentum risus. Phasellus
+                                        venenatis
+                                        ultricies dignissim. Nunc ante lectus, accumsan non porta at. Donec vitae
+                                        tellus risus. Aenean sed
+                                        fermentum risus. Phasellus venenatis ultricies dignissim.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <h2 class="faq-brand" id="vono"><img src="images/logo_vono_s.png" width="80" alt="VONO®"></h2>
+                        <div class="dot-separator"></div>
+                        <h2 class="faq-brand" id="amino"><img src="images/logo_amino_s.png" width="80" alt="aminoVITAL®"></h2>
+                        <div class="dot-separator"></div>
+                    </div>
+                </div>
+
+                <!-- 1st-tab End -->
+                <!-- 2nd-tab Start -->
+                <div id="qa-use" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-qa-use">
+                    aaaaaa
+                </div>
+                <!-- 2st-tab End -->
+            </div>
+            <!-- tab-content End -->
+
+        </section>
+
+    </section>
+
+</section>
+    <!-- ALL SITE JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/hf.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- scrollTop -->
+    <script src="js/jquery-backToTop.min.js"></script>
+    <script>
+        var $button = $.backToTop({
+            theme: 'fawesome'
+        });
+    </script>
+    <!-- ALL SITE JS -->
+
+    <script>
+        // Toggle Collapse
+        $('.faq li .question').click(function () {
+            $(this).parent().toggleClass('active');
+        });
+    </script>
+</body>
+
+</html>
